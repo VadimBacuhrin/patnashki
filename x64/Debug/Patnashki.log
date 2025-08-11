@@ -1,7 +1,7 @@
-﻿  Bekap.cpp
-C:\Users\Дети\source\repos\Patnashki\Patnashki\Bekap.cpp(8,6): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-C:\Users\Дети\source\repos\Patnashki\Patnashki\Bekap.cpp(11,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\Дети\source\repos\Patnashki\Patnashki\Bekap.cpp(58,17): warning C4244: =: преобразование "time_t" в "int", возможна потеря данных
-C:\Users\Дети\source\repos\Patnashki\Patnashki\Bekap.cpp(72,17): warning C4244: =: преобразование "time_t" в "int", возможна потеря данных
-C:\Users\Дети\source\repos\Patnashki\Patnashki\Bekap.cpp(307,1): warning C4715: iswin: значение возвращается не при всех путях выполнения
+﻿  Patnashki.cpp
+C:\Users\Дети\source\repos\Patnashki\Patnashki\Patnashki.cpp(8,6): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+C:\Users\Дети\source\repos\Patnashki\Patnashki\Patnashki.cpp(11,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Дети\source\repos\Patnashki\Patnashki\Patnashki.cpp(56,7): warning C4552: "-": результат выражения не используется
   Patnashki.vcxproj -> C:\Users\Дети\source\repos\Patnashki\x64\Debug\Patnashki.exe
+  "pwsh.exe" не является внутренней или внешней
+  командой, исполняемой программой или пакетным файлом.
