@@ -1,19 +1,33 @@
 #include <iostream>
 #include <time.h>
 #include "Patnashki.h" 
-
+#include <conio.h>
 using namespace std;
 
 
 void main()
 {
 	setlocale(LC_ALL, "Russian");
+	int sp;
 	srand(time(NULL));
 	init();
 	stir();
 	print();
+	cout << "Каким способом хотите решить?\n 1 - вручную\n 2 - автоматический\n";
+	cin >> sp;
+	system("cls");
+	print();
+	switch (sp)
+	{
+	case 1:
+		handmove();
+		break;
+	case 2:
+		// Запустить авто хотьбу и паттерн BFS
+		break;
+	}
+	cout << "\nИгра закончена";
 }
-
 
 void init()
 {
@@ -78,4 +92,80 @@ void print()
 		}
 		cout << endl;
 	}
+}
+
+void handmove()
+{
+	
+	int empty_x = -1;
+	int empty_y = -1;
+	while (!is_win())
+	{
+		cout << "Если хотите выйти нажмите клавишу 'e'\n";
+		char ch = _getch();
+		if (ch == 'e')
+		{
+			return;
+		}
+		for (int i = 0; i < 3; i++)
+		{
+			for (int j = 0; j < 3; j++)
+			{
+				if (card[i][j] == 0)
+				{
+					empty_x = i;
+					empty_y = j;
+				}
+			}
+		}
+		switch (ch)
+		{
+		case 'w':
+			if (empty_x - 1 >= 0)
+			{
+				card[empty_x][empty_y] = card[empty_x - 1][empty_y];
+				card[empty_x - 1][empty_y] = 0;
+			}
+			break;
+		case 's':
+			if (empty_x + 1 <= 2)
+			{
+				card[empty_x][empty_y] = card[empty_x + 1][empty_y];
+				card[empty_x + 1][empty_y] = 0;
+			}
+			break;
+		case 'a':
+			if (empty_y - 1 >= 0)
+			{
+				card[empty_x][empty_y] = card[empty_x][empty_y - 1];
+				card[empty_x][empty_y - 1] = 0;
+			}
+			break;
+		case 'd':
+			if (empty_y + 1 <= 2)
+			{
+				card[empty_x][empty_y] = card[empty_x][empty_y + 1];
+				card[empty_x][empty_y + 1] = 0;
+			}
+		}
+		system("cls");
+		print();
+	}
+}
+
+bool is_win()
+{
+	int count = 0;
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			if (card[i][j] != count)
+			{
+				return false;
+			}
+			count++;
+		}
+	}
+	return true;
 }
