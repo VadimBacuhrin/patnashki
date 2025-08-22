@@ -4,7 +4,7 @@
 #include <conio.h>
 using namespace std;
 
-
+BFS alfa;
 void main()
 {
 	setlocale(LC_ALL, "Russian");
@@ -26,8 +26,58 @@ void main()
 		// Запустить авто хотьбу и паттерн BFS
 		break;
 	}
-	cout << "\nИгра закончена";
+	cout << "Игра закончена";
 }
+
+void add(int **cadr)
+{
+	if (len == 0)
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			for (int j = 0; j < 3; j++)
+			{
+				alfa.frames[0][i][j] = cadr[i][j];
+			}
+		}
+		len++;
+	}
+	else
+	{
+		frame* temp = new frame[len];
+		for (int i = 0; i < len; i++)
+		{
+			for (int j = 0; j < 3; j++)
+			{
+				for (int k = 0; k < 3; k++)
+				{
+					temp[i][j][k] = alfa.frames[i][j][k];
+				}
+			}
+		}
+		delete[] alfa.frames;
+		alfa.frames = new frame[len+1];
+		for (int i = 0; i < len+1; i++)
+		{
+			for (int j = 0; j < 3; j++)
+			{
+				for (int k = 0; k < 3; k++)
+				{
+					if (i == len)
+					{
+						alfa.frames[i][j][k] = cadr[j][k];
+					}
+					else
+					{
+						alfa.frames[i][j][k] = temp[i][j][k];
+					}
+				}
+			}
+		}
+	}
+	len++;
+}
+
 
 void init()
 {
