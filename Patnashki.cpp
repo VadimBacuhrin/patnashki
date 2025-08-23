@@ -125,6 +125,35 @@ void stir()
 			card[i][j] = temp;
 		}
 	}
+	int count = 0;
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			if (card[i][j] == 0)
+			{
+				continue;
+			}
+			for (int k = i; k < 3; k++)
+			{
+				for (int y = j; y < 3; y++)
+				{
+					if (card[k][y] == 0)
+					{
+						continue;
+					}
+					if (card[i][j] > card[k][y])
+					{
+						count++;
+					}
+				}
+			}
+		}
+	}
+	if (count % 2 != 0)
+	{
+		stir();
+	}
 }
 
 void print()
@@ -205,11 +234,15 @@ void handmove()
 
 bool is_win()
 {
-	int count = 0;
+	int count = 1;
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)
 		{
+			if (card[i][j] == 0)
+			{
+				continue;
+			}
 			if (card[i][j] != count)
 			{
 				return false;
