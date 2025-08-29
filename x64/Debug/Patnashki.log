@@ -1,4 +1,10 @@
 ﻿  Patnashki.cpp
+C:\Users\Дети\source\repos\Patnashki\Patnashki\Patnashki.h(24,4): warning C4154: удаление массива; выполнено преобразование к указателю
+  (компиляция исходного файла "Patnashki.cpp")
+  
+C:\Users\Дети\source\repos\Patnashki\Patnashki\Patnashki.h(26,3): warning C4154: удаление массива; выполнено преобразование к указателю
+  (компиляция исходного файла "Patnashki.cpp")
+  
 C:\Users\Дети\source\repos\Patnashki\Patnashki\Patnashki.cpp(8,6): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
 C:\Users\Дети\source\repos\Patnashki\Patnashki\Patnashki.cpp(12,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
 C:\Users\Дети\source\repos\Patnashki\Patnashki\Patnashki.cpp(120,7): warning C4552: "-": результат выражения не используется

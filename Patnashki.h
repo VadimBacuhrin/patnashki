@@ -17,6 +17,14 @@ public:
 		len++;
 		id = len+1;
 	}
+	~frame()
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			delete[] cadr[i];
+		}
+		delete[] cadr;
+	}
 	int* operator[](int i)
 	{
 		return cadr[i];
@@ -30,6 +38,10 @@ public:
 	BFS()
 	{
 		frames = new frame[len+1];
+	}
+	~BFS()
+	{
+		delete[] frames;
 	}
 	friend void add(int **cadr);
 
